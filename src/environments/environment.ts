@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  basePath: 'https://devapi.pippintitle.com',
+  // basePath: 'http://localhost:9000',
+  access_token: 'xWeh4H0QgqIfM4k5cGW7XQQdIxLXxf9k'
 };
