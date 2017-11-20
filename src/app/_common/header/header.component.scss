@@ -1,0 +1,11 @@
+@import '../../../scss/variables';
+.main-logo{
+    margin-top: 3em;
+    width: 100%;
+}
+.main-logo a{
+    font-weight: $title-font-weight;
+    font-size: $title-font-size;
+    color: $primary-font-color ;
+    text-decoration: none;    
+}

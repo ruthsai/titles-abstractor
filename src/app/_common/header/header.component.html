@@ -1,3 +1,8 @@
-<p>
-  header works!
-</p>
+<div class="navbar navbar-fixed-top">
+  <div class="main-logo text-center" *ngIf="!auth.isLoggedIn()">
+    <a [routerLink]="['/']"> 
+      <img src="../assets/images/pippintitle.png">     
+      <span>Pippin Title Services</span>
+    </a>
+  </div>
+</div>

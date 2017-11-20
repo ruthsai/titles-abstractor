@@ -1,6 +1,14 @@
 $fa-font-path : '../../node_modules/font-awesome/fonts';
-$title-primary-color: rgb(66, 139, 202);
-$title-secondary-color: rgb(240, 173, 78);
-$title-accept-color: #0F9D58;
-$title-reject-color: rgb(217, 83, 79);;
-$title-font-color: rgb(119, 119, 119);
+$primary-color: #428bca;
+$primary-hover: #357ebd;
+$secondary-color: #f0ad4e;
+$secondary-hover: #eea236;
+$accept-color: #60cc70;
+$accept-hover: #0F9D58;
+$reject-color: #d9534f;
+$reject-hover: #d43f3a;
+
+$primary-font-color: #333333;
+$secondary-font-color: #777777;
+$title-font-size: 48px;
+$title-font-weight: lighter;
