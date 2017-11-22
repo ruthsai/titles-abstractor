@@ -13,5 +13,6 @@ export class SidebarComponent implements OnInit {
   }
 
   //implement sidebar
+  // another change
 
 }
