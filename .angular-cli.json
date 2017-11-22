@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "scss/angular-theme.scss",
         "scss/styles.scss"
       ],
       "scripts": [],
