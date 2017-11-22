@@ -1,7 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-// src/scss/styles.scss
-
 @import './variables';
 @import './mixins';
 @import '../../node_modules/font-awesome/scss/font-awesome';
 @import '../../node_modules/bootstrap/scss/bootstrap';
+@import './bootstrap_override.scss';
+
+.pt-login { padding-top: $login-top-padding !important; }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container > * {
+    width: 100%;
+}

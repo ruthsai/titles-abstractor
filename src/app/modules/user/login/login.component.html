@@ -1,3 +1,29 @@
-<p>
-  login works!
-</p>
+<div class="text-center pt-5">
+  <h1>Login</h1>
+</div>
+
+<form [formGroup]="loginFrm" (ngSubmit)="login()">
+  <div class="row pt-login">
+    <div class="offset-sm-1 col-sm-10 offset-md-4 col-md-4">
+      <div class="form-container">
+        <mat-form-field>
+          <input matInput [(ngModel)]="loginModel.Email_Address" placeholder="Email" 
+            type="email" [formControl]="loginFrm.controls['Email_Address']" >
+          <mat-error class="text-center" *ngIf="loginFrm.controls['Email_Address'].touched && 
+            loginFrm.controls['Email_Address'].hasError('required')">Email Address is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="loginModel.User_Password" placeholder="Password" 
+            type="password" [formControl]="loginFrm.controls['User_Password']" >
+          <mat-error class="text-center" *ngIf="loginFrm.controls['User_Password'].touched && 
+            loginFrm.controls['User_Password'].hasError('required')">Password is required</mat-error>
+        </mat-form-field>         
+        <mat-error *ngIf="error" class="text-center">{{error}}</mat-error>
+        <button mat-raised-button  [disabled]="loginFrm.invalid">Login</button>
+      </div>      
+    </div>
+  </div>
+</form>
+
+
+
