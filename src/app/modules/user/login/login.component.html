@@ -19,7 +19,7 @@
             loginFrm.controls['User_Password'].hasError('required')">Password is required</mat-error>
         </mat-form-field>         
         <mat-error *ngIf="error" class="text-center">{{error}}</mat-error>
-        <button mat-raised-button  [disabled]="loginFrm.invalid">Login</button>
+        <button mat-raised-button [color]="'primary'" [disabled]="loginFrm.invalid">Login</button>
       </div>      
     </div>
   </div>

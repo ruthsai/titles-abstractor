@@ -1,0 +1,48 @@
+@import '../../../scss/variables';
+
+nav {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;    
+    }
+
+    li {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        margin: 0;
+        padding: 0;
+        border-color: rgba(0,0,0,.06);
+        color: rgba(0,0,0,.54);
+        display: list-item;
+    }
+
+    li>a {
+        box-sizing: border-box;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 47px;
+        text-decoration: none;
+        transition: all .3s;
+        padding: 0 16px;
+        position: relative;
+        color: rgba(0,0,0,.54);
+        cursor: pointer;
+    }
+
+    li>a:hover {
+        background-color: $primary-color;
+        color: white;
+    }
+
+    li>a:active {
+        background-color: $primary-color;
+        color: white;
+    }
+    
+}
+
+
+
