@@ -67,6 +67,13 @@ export class AuthService {
     this.cookies.remove('pippinTitleAbstr');
   }
 
-  
+  getUserId(): string {
+    if (this.cookies.getObject('pippinTitleAbstr') && this.cookies.getObject('pippinTitleAbstr')['user']
+              && this.cookies.getObject('pippinTitleAbstr')['user']['User_ID']) 
+              return this.cookies.getObject('pippinTitleAbstr')['user']['User_ID'];
+    else{     
+      return '';
+    }    
+  }
 
 }

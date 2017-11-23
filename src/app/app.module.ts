@@ -12,7 +12,7 @@ import {  MatButtonModule,  MatInputModule, MatSidenavModule, MatListModule,
 import { environment } from 'environments/environment';
 import { PreloaderService } from 'app/_common/preloader/preloader.service';
 import { HttpService, ConfigService, AuthService, AuthGuardService, 
-  SocketService } from 'app/_services';
+  SocketService,PagerService, OrdersService } from 'app/_services';
 
 import { AppComponent } from './app.component';
 import { PreloaderComponent } from './_common/preloader/preloader.component';
@@ -64,6 +64,8 @@ export function httpServiceFactory(backend: XHRBackend, defaultOptions: RequestO
     AuthService,
     AuthGuardService,
     SocketService,
+    PagerService, 
+    OrdersService,
     HttpService,
     {
       provide: HttpService,
