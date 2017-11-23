@@ -1,8 +1,10 @@
-<nav>
+<nav (click)="closeSideBar()">
   <ul>
     <li>
-      <a (click)="logout()"> Logout </a>
-      <a [routerLink]="['/home']"> Orders </a>
+      <a (click)="logout()"> Logout </a>      
+    </li>
+    <li>
+        <a [routerLink]="['/home']"> Orders </a>
     </li>
   </ul>
 </nav>

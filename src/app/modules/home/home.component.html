@@ -1,3 +1,15 @@
-<p>
-  home works!
-</p>
+<div class="text-center">
+  <h1>Orders</h1>
+</div>
+
+<div class="row">
+  <div class="offset-sm-1 col-sm-10 offset-md-2 col-md-8">
+    <mat-card *ngFor="let order of orders">
+      <span *ngIf="order.Property_Address_1">{{order.Property_Address_1}}
+        <br>{{order.Property_City}},&nbsp;&nbsp;{{order.Property_State_Abbr}} {{order.Property_ZipCode}}
+      </span>
+      <span *ngIf="order.Property_County && !order.Property_Address_1">{{order.Property_County}} &nbsp;&nbsp;{{order.Property_State_Abbr}}F
+      </span>
+    </mat-card>
+  </div>
+</div>
