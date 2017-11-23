@@ -1,4 +1,6 @@
 @import './variables';
 @import './mixins';
 
+body { color: $primary-font-color; } 
+
 h1{ font-size: $title-font-size; }

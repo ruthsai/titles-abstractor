@@ -2,12 +2,17 @@
 .main-logo{
     margin-top: 3em;
     width: 100%;
-}
-.main-logo a{
-    font-weight: $title-font-weight;
-    font-size: $big-logo-font-size;
-    color: $primary-font-color ;
-    text-decoration: none;    
+
+    a{
+        font-weight: $title-font-weight;
+        font-size: $big-logo-font-size;
+        color: $primary-font-color ;
+        text-decoration: none;    
+    }
+
+    img{
+        margin-bottom: 1rem;
+    }
 }
 
 .loggedin-header-height {
@@ -18,13 +23,16 @@
     height: $loggedout-header-height;    
 }
 
-.small-logo-img{
-    height:2rem
-}
+.small-logo {
+    img{
+        height:2rem;
+        margin-bottom: 0.5rem;
+    }
 
-.small-logo a{
-    font-weight: $title-font-weight;
-    font-size: $small-logo-font-size;
-    color: $primary-font-color ;
-    text-decoration: none;    
+    a{
+        font-weight: $title-font-weight;
+        font-size: $small-logo-font-size;
+        color: $primary-font-color ;
+        text-decoration: none; 
+    }
 }
