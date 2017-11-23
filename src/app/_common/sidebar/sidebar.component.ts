@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from 'app/_services';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private config: ConfigService
+  ) { }
 
   ngOnInit() {
   }
   
-  //sai in dev
-
-  //implement sidebar
-  // another change
+  closeSideBar(){
+    this.config.hideMenu()
+  }
 
 }

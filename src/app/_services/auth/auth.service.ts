@@ -18,8 +18,8 @@ export class AuthService {
   ) { }
 
   getToken(): string {
-    if (this.cookies.getObject('pippinTitleAdm')) 
-      return this.cookies.getObject('pippinTitleAdm')['token'];
+    if (this.cookies.getObject('pippinTitleAbstr')) 
+      return this.cookies.getObject('pippinTitleAbstr')['token'];
     return null;
   }
 

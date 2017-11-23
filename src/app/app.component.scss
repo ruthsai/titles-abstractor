@@ -1,0 +1,19 @@
+@import '../scss/variables';
+
+.app-container-loggedout {
+    width: 100%;
+    bottom:0;
+    top: $loggedout-header-height;
+    position: fixed;
+}
+
+.app-container-loggedin {
+  width: 100%;
+  bottom:0;
+  top: $loggedin-header-height;
+  position: fixed;
+}
+  
+.app-sidenav {
+  padding: 20px;
+}
