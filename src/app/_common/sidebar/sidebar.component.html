@@ -1,3 +1,10 @@
-<p>
-  sidebar works!
-</p>
+<nav (click)="closeSideBar()">
+  <ul>
+    <li>
+      <a (click)="logout()"> Logout </a>      
+    </li>
+    <li>
+        <a [routerLink]="['/home']"> Orders </a>
+    </li>
+  </ul>
+</nav>

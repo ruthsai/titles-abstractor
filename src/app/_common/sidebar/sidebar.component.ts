@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService ,AuthService} from 'app/_services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(
+    private config: ConfigService,
+    private auth: AuthService,
+    private router:Router
+  ) { }
 
   ngOnInit() {
   }
   
-  //sai in dev
+  closeSideBar(){ this.config.hideMenu() }
+
+  logout() {    
+    this.auth.logout();
+    this.router.navigate(['/']);
+  }
 
 }

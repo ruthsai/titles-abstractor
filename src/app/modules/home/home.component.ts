@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, ConfigService,OrdersService } from '../../_services';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+ 
+  orders: any = []
+  
+  
+  constructor(
+    private auth: AuthService,
+    private router: Router,    
+    private config: ConfigService,
+    private orderService: OrdersService,  
+  ) {
+   
   }
 
+  ngOnInit() {
+    
+  }
+
+  
 }
+

@@ -1,6 +1,7 @@
 @import './variables';
 @import './mixins';
 @import '../../node_modules/font-awesome/scss/font-awesome';
+@import './angular_material_override.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import './bootstrap_override.scss';
 
@@ -14,3 +15,6 @@
 .form-container > * {
     width: 100%;
 }
+
+a:hover { text-decoration: none;}
+a:focus { outline: none;}

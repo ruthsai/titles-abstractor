@@ -1,6 +1,12 @@
-<div class="container-fluid" (click)="hideMenu()">
-  <app-header></app-header>  
-  <router-outlet></router-outlet>
-  <app-preloader></app-preloader>        
-  <app-footer></app-footer>   
-</div>
+<app-header></app-header>
+<mat-sidenav-container 
+  [ngClass]="isLoggedIn()?'app-container-loggedin':'app-container-loggedout'">
+  <mat-sidenav [opened]="getMenu()" class="app-sidenav" *ngIf="isLoggedIn()" >
+      <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+    <app-preloader></app-preloader>
+  </div>
+</mat-sidenav-container>
+<app-footer></app-footer>

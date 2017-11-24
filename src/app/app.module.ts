@@ -6,12 +6,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { XHRBackend, RequestOptions, HttpModule } from '@angular/http';
 import { SocketIoConfig, SocketIoModule } from 'ng-socket-io';
 import { CookieModule, CookieService } from 'ngx-cookie';
-import {  MatButtonModule,  MatInputModule} from '@angular/material';
+import {  MatButtonModule,  MatInputModule, MatSidenavModule, 
+  MatCardModule} from '@angular/material';
 
 import { environment } from 'environments/environment';
 import { PreloaderService } from 'app/_common/preloader/preloader.service';
-import { HttpService, ConfigService, AuthService, 
-  AuthGuardService, SocketService } from 'app/_services';
+import { HttpService, ConfigService, AuthService, AuthGuardService, 
+  SocketService, OrdersService } from 'app/_services';
 
 import { AppComponent } from './app.component';
 import { PreloaderComponent } from './_common/preloader/preloader.component';
@@ -25,7 +26,7 @@ import { HomeComponent } from './modules/home/home.component';
 const appRoutes: Routes = [
   { path: '', component: DefaultComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent,canActivate:[AuthGuardService] },
 
   { path: '**', redirectTo: '' }
 ];
@@ -51,7 +52,7 @@ export function httpServiceFactory(backend: XHRBackend, defaultOptions: RequestO
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
-    MatButtonModule, MatInputModule,
+    MatButtonModule, MatInputModule,MatSidenavModule,MatCardModule,
     CookieModule.forRoot(),
     SocketIoModule.forRoot(configSocket),
     FormsModule, ReactiveFormsModule, HttpModule, routing, RouterModule
@@ -63,6 +64,7 @@ export function httpServiceFactory(backend: XHRBackend, defaultOptions: RequestO
     AuthService,
     AuthGuardService,
     SocketService,
+    OrdersService,
     HttpService,
     {
       provide: HttpService,

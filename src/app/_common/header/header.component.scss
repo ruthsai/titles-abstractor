@@ -2,10 +2,37 @@
 .main-logo{
     margin-top: 3em;
     width: 100%;
+
+    a{
+        font-weight: $title-font-weight;
+        font-size: $big-logo-font-size;
+        color: $primary-font-color ;
+        text-decoration: none;    
+    }
+
+    img{
+        margin-bottom: 1rem;
+    }
 }
-.main-logo a{
-    font-weight: $title-font-weight;
-    font-size: $title-font-size;
-    color: $primary-font-color ;
-    text-decoration: none;    
+
+.loggedin-header-height {
+    height: $loggedin-header-height;    
+}
+
+.loggedout-header-height {
+    height: $loggedout-header-height;    
+}
+
+.small-logo {
+    img{
+        height:2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    a{
+        font-weight: $title-font-weight;
+        font-size: $small-logo-font-size;
+        color: $primary-font-color ;
+        text-decoration: none; 
+    }
 }

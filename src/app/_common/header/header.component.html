@@ -1,8 +1,18 @@
-<div class="navbar navbar-fixed-top">
-  <div class="main-logo text-center">
-    <a [routerLink]="['/']"> 
-      <img src="../assets/images/pippintitle.png">     
+<div class="navbar navbar-fixed-top" 
+  [ngClass]="isLoggedIn()?'loggedin-header-height':'loggedout-header-height'">
+  <div class="main-logo text-center" *ngIf="!isLoggedIn()">
+    <a [routerLink]="['/']">
+      <img src="../assets/images/pippintitle.png">
       <span>Pippin Title Services</span>
     </a>
+  </div>
+  <div *ngIf="isLoggedIn()">
+    <div class="small-logo pull-left">
+        <i class="fa fa-bars fa-2x" aria-hidden="true" (click)="openSideBar($event)" ></i>&nbsp;&nbsp;
+        <a [routerLink]="['/']" >
+          <img src="../assets/images/pippintitle.png">
+          <span>Pippin Title Services</span>
+        </a>   
+    </div>    
   </div>
 </div>
