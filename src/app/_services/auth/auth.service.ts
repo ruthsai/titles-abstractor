@@ -18,7 +18,7 @@ export class AuthService {
   ) { }
 
   getToken(): string {
-    if (this.cookies.getObject('pippinTitleAbstr')) 
+    if (this.cookies.getObject('pippinTitleAbstr'))
       return this.cookies.getObject('pippinTitleAbstr')['token'];
     return null;
   }
@@ -34,7 +34,7 @@ export class AuthService {
 
     if (this.isLoggedIn())
       return this.http.get(this.config.getBasePath() + '/users/admin/isLoggedIn', options)
-      .map((response) => response,
+        .map((response) => response,
         (error) => Observable.throw(error));
 
     return Observable.throw(false);
@@ -46,15 +46,15 @@ export class AuthService {
     let access_token: string = this.config.getAccessToken();
     let headers = new Headers();
     headers.append("Authorization", "Basic " + btoa(username + ":" + password));
-    return this.http.post(this.config.getBasePath() + '/auth/admin/login', 
-      { User_Role:"admin",access_token: access_token }, { headers: headers })
-    .map((response: Response) => this.createUserCookie(response.json()))
-    .catch((error) => Observable.throw(error.json()));
+    return this.http.post(this.config.getBasePath() + '/auth/admin/login',
+      { User_Role: "admin", access_token: access_token }, { headers: headers })
+      .map((response: Response) => this.createUserCookie(response.json()))
+      .catch((error) => Observable.throw(error.json()));
   }
 
-  createUserCookie(data){
+  createUserCookie(data) {
     var cookieObj = data;
-    if (data&& data.token) {
+    if (data && data.token) {
       cookieObj['user']['User_Code'] = cookieObj['user']['User_Status'];
       delete cookieObj['user']['User_Status'];
       // create a cookies for newuser 
@@ -63,17 +63,14 @@ export class AuthService {
     return cookieObj;
   }
 
-  logout(): void {   
+  logout(): void {
     this.cookies.remove('pippinTitleAbstr');
   }
 
   getUserId(): string {
-    if (this.cookies.getObject('pippinTitleAbstr') && this.cookies.getObject('pippinTitleAbstr')['user']
-              && this.cookies.getObject('pippinTitleAbstr')['user']['User_ID']) 
-              return this.cookies.getObject('pippinTitleAbstr')['user']['User_ID'];
-    else{     
-      return '';
-    }    
+    if (this.cookies.getObject('pippinTitleAbstr') && this.cookies.getObject('pippinTitleAbstr')['user'])
+      return this.cookies.getObject('pippinTitleAbstr')['user']['User_ID'];
+    else return '';
   }
 
 }

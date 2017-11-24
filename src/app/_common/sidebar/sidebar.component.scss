@@ -9,26 +9,23 @@ nav {
     }
 
     li {
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
+        border-bottom-width:$border-width;
+        border-bottom-style: $border-style;
         margin: 0;
         padding: 0;
-        border-color: rgba(0,0,0,.06);
-        color: rgba(0,0,0,.54);
+        border-color: $border-color;
+        color: $primary-font-color;
         display: list-item;
     }
 
     li>a {
         box-sizing: border-box;
-        display: block;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 47px;
-        text-decoration: none;
+        display: block;      
+        line-height: $list-item-line-height;        
         transition: all .3s;
         padding: 0 16px;
         position: relative;
-        color: rgba(0,0,0,.54);
+        color: $primary-font-color;
         cursor: pointer;
     }
 
